@@ -8,6 +8,7 @@ import { Product, User } from "@prisma/client";
 import useMutation from "@libs/client/useMutation";
 import { cls } from "@libs/client/utils";
 import useUser from "@libs/client/useUser";
+import Image from "next/image";
 
 interface ProductWithUser extends Product {
   user: User;
@@ -37,24 +38,30 @@ const ItemDetail: NextPage = () => {
     <Layout canGoBack>
       <div className="px-4  py-4">
         <div className="mb-8">
-          <img
-            src={`https://imagedelivery.net/qcjqg1UwEa7XLnrUbYKReQ/${data?.product.image}/public`}
-            className="h-96 bg-slate-300"
-          />
+          <div className="relative  pb-80">
+            <Image
+              alt="hello"
+              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${data?.product.image}/public`}
+              className="bg-slate-300 object-cover"
+              layout="fill"
+            />
+          </div>
           <div className="flex cursor-pointer py-3 border-t border-b items-center space-x-3">
-            <img
-              src={`https://imagedelivery.net/qcjqg1UwEa7XLnrUbYKReQ/${data?.product?.user?.avatar}/avatar`}
+            <Image
+              alt="hello"
+              width={48}
+              height={48}
+              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${data?.product?.user?.avatar}/avatar`}
               className="w-12 h-12 rounded-full bg-slate-300"
             />
             <div>
               <p className="text-sm font-medium text-gray-700">
                 {data?.product?.user?.name}
               </p>
-              <Link
-                href={`/users/profiles/${data?.product?.user?.id}`}
-                className="text-xs font-medium text-gray-500"
-              >
-                View profile &rarr;
+              <Link href={`/users/profiles/${data?.product?.user?.id}`}>
+                <a className="text-xs font-medium text-gray-500">
+                  View profile &rarr;
+                </a>
               </Link>
             </div>
           </div>
