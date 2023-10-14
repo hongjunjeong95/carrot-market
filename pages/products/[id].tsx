@@ -41,7 +41,7 @@ const ItemDetail: NextPage = () => {
           <div className="relative  pb-80">
             <Image
               alt="hello"
-              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${data?.product.image}/public`}
+              src={`https://imagedelivery.net/qcjqg1UwEa7XLnrUbYKReQ/${data?.product.image}/public`}
               className="bg-slate-300 object-cover"
               layout="fill"
             />
@@ -51,17 +51,18 @@ const ItemDetail: NextPage = () => {
               alt="hello"
               width={48}
               height={48}
-              src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${data?.product?.user?.avatar}/avatar`}
+              src={`https://imagedelivery.net/qcjqg1UwEa7XLnrUbYKReQ/${data?.product?.user?.avatar}/avatar`}
               className="w-12 h-12 rounded-full bg-slate-300"
             />
             <div>
               <p className="text-sm font-medium text-gray-700">
                 {data?.product?.user?.name}
               </p>
-              <Link href={`/users/profiles/${data?.product?.user?.id}`}>
-                <a className="text-xs font-medium text-gray-500">
-                  View profile &rarr;
-                </a>
+              <Link
+                href={`/users/profiles/${data?.product?.user?.id}`}
+                className="text-xs font-medium text-gray-500"
+              >
+                View profile &rarr;
               </Link>
             </div>
           </div>

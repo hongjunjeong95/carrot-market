@@ -19,7 +19,7 @@ export default function Item({ title, price, hearts, id, image }: ItemProps) {
         <div className="w-20 h-20 relative  rounded-md">
           <Image
             alt="hello"
-            src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${image}/public`}
+            src={`https://imagedelivery.net/qcjqg1UwEa7XLnrUbYKReQ/${image}/public`}
             layout="fill"
             objectFit="cover"
           />
