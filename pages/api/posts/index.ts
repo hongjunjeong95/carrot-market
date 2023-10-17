@@ -37,6 +37,12 @@ async function handler(
     const {
       query: { latitude, longitude },
     } = req;
+    if (!latitude) {
+      throw Error("latitude is null");
+    }
+    if (!longitude) {
+      throw Error("longitude is null");
+    }
     const parsedLatitude = parseFloat(latitude.toString());
     const parsedLongitue = parseFloat(longitude.toString());
     client.$queryRaw`SET SESSION sql_mode = 'STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';`.then(

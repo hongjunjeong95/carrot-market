@@ -12,6 +12,11 @@ async function handler(
     body,
     session: { user },
   } = req;
+
+  if (!id) {
+    throw Error("id is null");
+  }
+
   const message = await client.message.create({
     data: {
       message: body.message,

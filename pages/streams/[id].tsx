@@ -7,7 +7,6 @@ import { Stream } from "@prisma/client";
 import { useForm } from "react-hook-form";
 import useMutation from "@libs/client/useMutation";
 import useUser from "@libs/client/useUser";
-import { useEffect } from "react";
 
 interface StreamMessage {
   message: string;
@@ -31,7 +30,7 @@ interface MessageForm {
   message: string;
 }
 
-const Stream: NextPage = () => {
+const StreamPage: NextPage = () => {
   const { user } = useUser();
   const router = useRouter();
   const { register, handleSubmit, reset } = useForm<MessageForm>();
@@ -136,4 +135,4 @@ const Stream: NextPage = () => {
   );
 };
 
-export default Stream;
+export default StreamPage;

@@ -11,6 +11,10 @@ async function handler(
     query: { id },
     session: { user },
   } = req;
+  if (!id) {
+    throw Error("id is null");
+  }
+
   const alreadyExists = await client.wondering.findFirst({
     where: {
       userId: user?.id,

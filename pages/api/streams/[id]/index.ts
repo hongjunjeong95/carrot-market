@@ -11,6 +11,11 @@ async function handler(
     query: { id },
     session: { user },
   } = req;
+
+  if (!id) {
+    throw Error("id is null");
+  }
+
   const stream = await client.stream.findUnique({
     where: {
       id: +id.toString(),

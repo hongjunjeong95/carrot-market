@@ -52,6 +52,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
         <div className="mb-8">
           <div className="relative  pb-80">
             <Image
+              alt="hello"
               src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${product.image}/public`}
               className="bg-slate-300 object-cover"
               layout="fill"
@@ -59,6 +60,7 @@ const ItemDetail: NextPage<ItemDetailResponse> = ({
           </div>
           <div className="flex cursor-pointer py-3 border-t border-b items-center space-x-3">
             <Image
+              alt="hello"
               width={48}
               height={48}
               src={`https://imagedelivery.net/aSbksvJjax-AUC7qVnaC4A/${product?.user?.avatar}/avatar`}
