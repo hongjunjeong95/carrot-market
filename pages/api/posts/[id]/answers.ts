@@ -13,6 +13,8 @@ async function handler(
     body: { answer },
   } = req;
 
+  const postId = id;
+
   const newAnswer = await client.answer.create({
     data: {
       user: {
@@ -21,9 +23,11 @@ async function handler(
         },
       },
       post: {
-        connect: {
-          id: +id.toString(),
-        },
+        ...(id && {
+          connect: {
+            id: +id.toString(),
+          },
+        }),
       },
       answer,
     },
